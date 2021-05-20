@@ -44,12 +44,15 @@ function getFirstIpAddress(cidrStr, callback) {
   // The IAP convention is to pass returned data as the first argument and error
   // data as the second argument to the callback function.
   if(firstIpAddress!=null){
-    ipv6Address= getIpv4MappedIpv6Address(firstIpAddress);}
+    ipv6Address= getIpv4MappedIpv6Address(firstIpAddress);
+    }
     var returnvalue = {
     "ipv4": firstIpAddress,
     "ipv6": ipv6Address,
   }
-return callback(Object.values(returnvalue), callbackError);
+  //const objEntries = Object.entries(returnvalue);
+  
+return callback(JSON.stringify(returnvalue),callbackError);
 }
 
 /**
