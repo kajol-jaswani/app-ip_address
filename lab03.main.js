@@ -64,7 +64,7 @@ function getFirstIpAddress(cidrStr, callback) {
     "ipv4": firstIpAddress,
     "ipv6": ipv6Address,
   }
-return callback(Object.values(returnvalue), callbackError);
+return callback(JSON.stringify(returnvalue),callbackError);
 }
 
 /*
